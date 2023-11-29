@@ -1,0 +1,68 @@
+/* Add this to your global.scss or component-specific styles file */
+
+ion-header {
+    ion-toolbar {
+      --background: #3880ff; /* Header background color */
+      color: #ffffff; /* Header text color */
+    }
+  
+    ion-title {
+      font-size: 1.5rem; /* Adjust the font size as needed */
+      font-weight: bold;
+    }
+  }
+  
+  ion-content {
+    ion-item {
+      ion-label {
+        font-weight: bold;
+      }
+  
+      ion-select {
+        width: 100%;
+        max-width: 300px; /* Adjust the max-width as needed */
+      }
+    }
+  
+    ion-item:last-child {
+      ion-label {
+        font-weight: bold;
+      }
+    }
+  
+    ion-note {
+      color: #3880ff; /* Selected options text color */
+    }
+  }
+  /* Adjust grid column styles */
+ion-col {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* Customize individual columns */
+#employee_name {
+  font-weight: bold;
+}
+
+#date {
+  font-weight: bold;/* Add specific styles for the date column */
+}
+
+#intime {
+ font-weight: bold; /* Add specific styles for the in time column */
+}
+
+#outime {
+  font-weight: bold;/* Add specific styles for the out time column */
+}
+
+#status {
+  font-weight: bold;/* Add specific styles for the status column */
+}
+
+#hourly {
+ font-weight: bold; /* Add specific styles for the hourly column */
+}
+
+  

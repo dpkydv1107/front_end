@@ -1,0 +1,28 @@
+<div class="container">
+  <ion-content class="ion-text-center">
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+      <h1>Login</h1>
+
+      <ion-item>
+        <ion-label position="floating">Email <span style="color: red">*</span></ion-label>
+        <ion-input type="email" id="email" placeholder="Enter Email" required [(ngModel)]="email" name="email"></ion-input>
+        <div *ngIf="loginForm.controls['email']?.errors?.['required']" class="error-message">Please enter a valid email address.</div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password <span style="color: red">*</span></ion-label>
+        <ion-input type="password" id="password" placeholder="Enter Password" required [(ngModel)]="password" name="password"></ion-input>
+        <div *ngIf="loginForm.controls['password']?.errors?.['required']" class="error-message">Password is required.</div>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="danger" routerLink="/signup">Signup</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="success" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>
+</div>

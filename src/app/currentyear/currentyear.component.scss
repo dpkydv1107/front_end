@@ -1,0 +1,57 @@
+
+ion-header {
+    ion-toolbar {
+      --background: #007bff; /* Set header background color */
+      --color: #ffffff; /* Set header text color */
+    }
+    ion-title {
+        text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+  
+  ion-content {
+    --background: #96989e; /* Set content background color */
+    background-position: center;
+    
+    ion-select {
+        background-color: #fff;
+        margin-right: auto;
+      margin-bottom: 16px; /* Add some space below the select elements */
+    }
+  
+    ion-grid {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+  
+      ion-row {
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+  
+        ion-col {
+          text-align: center;
+          padding: 10px 5px;
+  
+          &:nth-child(1) {
+            font-weight: bold;
+          }
+  
+          &:nth-child(2),
+          &:nth-child(4) {
+            font-family: monospace;
+          }
+  
+          &:nth-child(5) {
+            color: #008000;
+          }
+  
+          &:nth-child(6) {
+            color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,80 @@
+
+    <ion-menu side="start" contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item (click)="toggleDropdowns()">
+            <ion-button>Report</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+          MobileApp Attendance Report
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content id="main-content">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <!-- Dropdown for Employee Name -->
+            <ion-item *ngIf="showDropdowns">
+              <ion-label>Employee Name</ion-label>
+              <ion-select [(ngModel)]="selectedOption1" (ionChange)="fetchGridData()">
+                <ion-select-option *ngFor="let name of employeeNames" [value]="name.employee_id">
+                  {{ name.employee_name }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!-- Dropdown for Month -->
+            <ion-item *ngIf="showDropdowns">
+              <ion-label>Month</ion-label>
+              <ion-select [(ngModel)]="selectedOption2" (ionChange)="fetchGridByMonth()">
+                <ion-select-option *ngFor="let month of monthOptions" [value]="month.value">
+                  {{ month.date | date: 'MM' }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-row *ngIf="showGrid && attendanceData">
+        <ion-col size="12">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="3" id="employee_name">EMPLOYEE NAME</ion-col>
+              <ion-col size="2" id="date">DATE</ion-col>
+              <ion-col size="2" id="intime">IN TIME</ion-col>
+              <ion-col size="2" id="outime">OUT TIME</ion-col>
+              <ion-col size="2" id="status">STATUS</ion-col>
+              <ion-col size="1" id="hourly">HOURLY</ion-col>
+            </ion-row>
+
+            <ion-row *ngFor="let entry of attendanceData">
+              <ion-col size="3">{{ entry.employee_name }}</ion-col>
+              <ion-col size="2">{{ entry.date | date: 'dd/MM/yyyy' }}</ion-col>
+              <ion-col size="2">{{ entry.intime | date: 'HH:mm' }}</ion-col>
+              <ion-col size="2">{{ entry.outtime | date: 'HH:mm' }}</ion-col>
+              <ion-col size="2">{{ entry.status }}</ion-col>
+              <ion-col size="1">{{ entry.hourly | date: 'HH:mm' }}</ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-content>
+

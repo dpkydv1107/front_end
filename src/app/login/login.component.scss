@@ -1,0 +1,110 @@
+
+  ion-content {
+    --background: #d9dae0; /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Centers the content vertically */
+    width: 100vw; /* Makes content full width */
+    box-sizing: border-box;
+  }
+
+  ion-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #b95454; /* Title color */
+    text-align: center;
+    margin-bottom: 1rem; /* Adds some space between title and inputs */
+  }
+
+  ion-label {
+    color: #333333; /* Label text color */
+    font-weight: bold; /* Make labels stand out more */
+  }
+
+  ion-input {
+    border: 1px solid #111010; /* Input border color */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding: 0.8rem 1rem; /* Adjusts input padding */
+    width: 100%; /* Makes input fields full width */
+    box-sizing: border-box; /* Includes padding in the width */
+  }
+
+  ion-button {
+    --background: #007bff; /* Button background color */
+    --color: #ffffff; /* Button text color */
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    width: 100%; /* Makes button full width */
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #827676;
+  }
+
+  ion-content {
+    max-width: 400px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  ion-item {
+    margin-bottom: 15px;
+  }
+
+  ion-button {
+    margin-top: 20px;
+  }
+  html {
+    background-color: #f0f0f0; /* Set your desired background color */
+  }
+/* Example Toastr styles */
+
+/* Styling for the toast container */
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+  top: 20px;
+  right: 20px;
+}
+
+/* Styling for the toast */
+.toast {
+  border-radius: 5px;
+}
+
+/* Styling for the success toast */
+.toast-success {
+  background-color: #28a745;
+}
+
+/* Styling for the error toast */
+.toast-error {
+  background-color: #dc3545;
+}
+
+/* Styling for the title of the toast */
+.toast-title {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Styling for the message content of the toast */
+.toast-message {
+  color: #fff;
+}
+div{
+  color: red;
+}

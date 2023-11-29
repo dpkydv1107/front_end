@@ -1,0 +1,49 @@
+<div class="container">
+  <ion-content class="ion-text-center">
+    <form #signupForm="ngForm" (ngSubmit)="onSignup()" >
+      <h1>Sign Up</h1>
+
+      <ion-item>
+        <ion-label position="floating">Username <span style="color: red">*</span></ion-label>
+        <ion-input type="text" placeholder="Enter username" required [(ngModel)]="username" name="username"></ion-input>
+        <div *ngIf="signupForm.controls['username']?.errors?.['required']" class="error-message">Username is required.</div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Email <span style="color: red">*</span></ion-label>
+        <ion-input type="email" placeholder="Enter Email" required [(ngModel)]="email" name="email"></ion-input>
+        <div *ngIf="signupForm.controls['email']?.errors?.['required']" class="error-message">Email is required.</div>
+        <div *ngIf="signupForm.controls['email']?.errors?.['email']" class="error-message">Please enter a valid email address.</div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Password <span style="color: red">*</span></ion-label>
+        <ion-input type="password" placeholder="Enter Password" required minlength="8" [(ngModel)]="password" name="password"></ion-input>
+        <div *ngIf="signupForm.controls['password']?.errors?.['required']" class="error-message">Password is required.</div>
+        <div *ngIf="signupForm.controls['password']?.errors?.['minlength']" class="error-message">Password should be at least 8 characters long.</div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Confirm Password <span style="color: red">*</span></ion-label>
+        <ion-input type="password" placeholder="Repeat Password" required [(ngModel)]="confirmpassword" name="confirmpassword"></ion-input>
+        <div *ngIf="signupForm.controls['confirmpassword']?.errors?.['required']" class="error-message">Please confirm your password.</div>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-checkbox slot="start" checked></ion-checkbox>
+        <ion-label>Remember me</ion-label>
+      </ion-item>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="danger" routerLink="/login" routerDirection="forward">Login</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="success" type="submit" [disabled]="!signupForm.valid">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>
+</div>

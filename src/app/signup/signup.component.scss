@@ -1,0 +1,52 @@
+/* Global Styles */
+ion-content {
+  --background: transparent; /* Optional: To remove default Ionic background */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Form Styles */
+form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  justify-content: center;
+}
+
+ion-item {
+  margin-bottom: 22px;
+
+  ion-label {
+    font-weight: bold;
+  }
+
+  ion-checkbox {
+    --background: #f1f1f1;
+  }
+}
+
+p a {
+  color: dodgerblue;
+}
+
+ion-row ion-col button {
+  margin: 8px 0;
+}
+
+/* Error Messages */
+.error-message {
+  color: red;
+}
+
+/* Container Styles */
+.container {
+  margin-left: 35%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+  height: 90vh; /* Adjust the height as needed */
+}
